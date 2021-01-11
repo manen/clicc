@@ -1,8 +1,6 @@
 package ui
 
 import (
-	"fmt"
-
 	"github.com/gotk3/gotk3/gtk"
 	"github.com/manen/clicc/info"
 	"github.com/xlab/closer"
@@ -16,15 +14,12 @@ func newWindow() *gtk.ApplicationWindow {
 		panic(err)
 	}
 
-	l, err := gtk.LabelNew("Hello World!")
-	if err != nil {
-		fmt.Println(err)
-	}
+	b := newBox()
 
 	hb := newHeaderBar()
 
 	win.SetTitlebar(hb)
-	win.Add(l)
+	win.Add(b)
 
 	win.SetTitle(info.Name)
 	win.SetDefaultSize(600, 350)
