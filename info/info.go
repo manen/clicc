@@ -1,5 +1,6 @@
 // Package info contains a bunch of constants (and vars
-// thanks to dumb arrays) used in the About page
+// that should be considered constants thanks to dumb arrays)
+// used in the About page
 package info
 
 import (
