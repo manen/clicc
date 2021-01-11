@@ -35,9 +35,15 @@ var (
 		"manen",
 	}
 
+	// Documenters is the list of people who
+	// documented all the code
 	Documenters []string = []string{
 		"manen",
 	}
 
+	// Artists is the list of people who
+	// drew all the artwork, images, etc...
+	//
+	// Since Clicc has no art in it, it is empty
 	Artists []string = []string{}
 )

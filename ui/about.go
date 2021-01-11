@@ -10,6 +10,10 @@ import (
 	"github.com/manen/clicc/info"
 )
 
+// newAboutButton creates the button visible in the
+// menu.
+//
+// Returns the parameters for glib.Menu#append
 func newAboutButton() (name string, actName string) {
 	ad := newAboutDialog()
 
@@ -22,6 +26,8 @@ func newAboutButton() (name string, actName string) {
 	return "About " + info.Name, "app.open-about"
 }
 
+// newAboutDialog creates the AboutDialog
+// passing in all the data from the info package
 func newAboutDialog() *gtk.AboutDialog {
 	ad, err := gtk.AboutDialogNew()
 	if err != nil {

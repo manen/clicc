@@ -7,6 +7,8 @@ import (
 	"github.com/gotk3/gotk3/gtk"
 )
 
+// newMenuButton creates the button in the HeaderBar
+// that when clicked, opens the menu
 func newMenuButton() *gtk.MenuButton {
 	mb, err := gtk.MenuButtonNew()
 	if err != nil {
@@ -24,6 +26,7 @@ func newMenuButton() *gtk.MenuButton {
 	return mb
 }
 
+// newMenu creates a glib.Menu
 func newMenu() *glib.Menu {
 	m := glib.MenuNew()
 

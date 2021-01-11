@@ -8,6 +8,8 @@ import (
 	"github.com/xlab/closer"
 )
 
+// newWindow creates a new ApplicationWindow,
+// puts in all the widgets we need, and show the window
 func newWindow() *gtk.ApplicationWindow {
 	win, err := gtk.ApplicationWindowNew(app)
 	if err != nil {
