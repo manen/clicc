@@ -33,7 +33,7 @@ func newAboutDialog() *gtk.AboutDialog {
 	if err != nil {
 		fmt.Println(err)
 	}
-	app.AddWindow(ad)
+	app.AddWindow(ad) // For whatever reason, the dialog doesn't want to attach to the parent window
 
 	ad.SetApplication(app)
 	ad.SetAuthors(info.Authors)

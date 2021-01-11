@@ -10,6 +10,11 @@ const (
 	// Name is the name of the app
 	Name string = "Clicc"
 
+	// Desc is the description of the app
+	// Preferrably short, since it has to look
+	// pretty in a HeaderBar#subtitle
+	Desc string = "Autoclicker"
+
 	// Version is the current version of the app
 	// Preferrably SemVer
 	Version string = "0.0.1"

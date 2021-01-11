@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/gotk3/gotk3/gtk"
+	"github.com/manen/clicc/info"
 )
 
 // newHeaderBar creates a new gtk.HeaderBar
@@ -17,7 +18,7 @@ func newHeaderBar() *gtk.HeaderBar {
 	mb := newMenuButton()
 
 	hb.SetShowCloseButton(true)
-	hb.SetSubtitle("Autoclicker")
+	hb.SetSubtitle(info.Desc)
 
 	hb.PackEnd(mb)
 
