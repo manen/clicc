@@ -27,7 +27,7 @@ func newWindow() *gtk.ApplicationWindow {
 	win.Add(l)
 
 	win.SetTitle(info.Name)
-	win.SetDefaultSize(600, 300)
+	win.SetDefaultSize(600, 350)
 
 	win.Connect("destroy", func() {
 		win.Destroy()
