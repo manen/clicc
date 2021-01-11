@@ -1,7 +1,6 @@
 package ui
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/gotk3/gotk3/glib"
@@ -34,24 +33,7 @@ func Start() {
 // logic contains the actual UI code.
 // It is called when the GTK app activates
 func logic() {
-	win, err := gtk.WindowNew(gtk.WINDOW_TOPLEVEL)
-	if err != nil {
-		panic(err)
-	}
-
-	win.SetTitle("Clicc")
-
-	win.Connect("destroy", func() {
-		gtk.MainQuit()
-	})
-
-	l, err := gtk.LabelNew("Hello World!")
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	win.Add(l)
-	win.SetDefaultSize(600, 300)
+	win := newWindow()
 	win.ShowAll()
 
 	gtk.Main()
