@@ -23,6 +23,7 @@ func disable() {
 	fmt.Println("Disabled")
 }
 
+// enable enables Clicc
 func enable() {
 	fmt.Println("Enabled")
 }
