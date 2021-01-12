@@ -12,6 +12,7 @@ var app *gtk.Application
 // Init creates a GTK app, initializes the ui, and calls gtk.Init
 func Init() {
 	gtk.Init(nil)
+	initStyle()
 
 	const appID = "me.manen.Clicc"
 	a, err := gtk.ApplicationNew(appID, glib.APPLICATION_FLAGS_NONE)

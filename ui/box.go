@@ -15,6 +15,12 @@ func newBox() *gtk.Box {
 		fmt.Println(err)
 	}
 
+	ctx, err := b.GetStyleContext()
+	if err != nil {
+		fmt.Println()
+	}
+	ctx.AddClass("main-box")
+
 	l, err := gtk.LabelNew(strconv.Itoa(i))
 	if err != nil {
 		fmt.Println(err)
