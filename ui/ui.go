@@ -1,6 +1,7 @@
 package ui
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gotk3/gotk3/glib"
@@ -38,4 +39,16 @@ func logic() {
 	win.ShowAll()
 
 	gtk.Main()
+}
+
+type stylable interface {
+	GetStyleContext() (*gtk.StyleContext, error)
+}
+
+func addClass(w stylable, class string) {
+	ctx, err := w.GetStyleContext()
+	if err != nil {
+		fmt.Println(err)
+	}
+	ctx.AddClass(class)
 }
