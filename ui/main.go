@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/gotk3/gotk3/gtk"
+	"github.com/manen/clicc/clicker"
 )
 
 var enableButton *gtk.Button
@@ -41,6 +42,10 @@ func newEnableButton() *gtk.Button {
 
 	b.SetLabel("Enable")
 	addClass(b, "butt")
+
+	b.Connect("clicked", func() {
+		go clicker.Switch()
+	})
 
 	return b
 }
