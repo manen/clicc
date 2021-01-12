@@ -7,6 +7,8 @@ import (
 	"github.com/gotk3/gotk3/gtk"
 )
 
+// css is the CssProvider that contains the
+// main styles (./ui/style.css)
 var css *gtk.CssProvider
 
 func initStyle() {

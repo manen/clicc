@@ -41,10 +41,13 @@ func logic() {
 	gtk.Main()
 }
 
+// stylable is any widget that has GetStyleContext
+// (probably a Widget)
 type stylable interface {
 	GetStyleContext() (*gtk.StyleContext, error)
 }
 
+// addClass adds a CSS class to a stylable
 func addClass(w stylable, class string) {
 	ctx, err := w.GetStyleContext()
 	if err != nil {
