@@ -27,7 +27,7 @@ func newWindow() *gtk.ApplicationWindow {
 	win.Connect("destroy", func() {
 		win.Destroy()
 		gtk.MainQuit()
-		closer.Exit(0)
+		closer.Close()
 	})
 
 	return win
