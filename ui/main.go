@@ -6,7 +6,8 @@ import (
 	"github.com/gotk3/gotk3/gtk"
 )
 
-var i = 0
+var enableButton *gtk.Button
+var descLabel *gtk.Label
 
 // newMainBox creates the main box containing
 // the actual content
@@ -21,6 +22,8 @@ func newMainBox() *gtk.Box {
 
 	bu := newEnableButton()
 	l := newDescLabel()
+	enableButton = bu
+	descLabel = l
 
 	b.Add(bu)
 	b.Add(l)
@@ -52,4 +55,41 @@ func newDescLabel() *gtk.Label {
 	}
 
 	return l
+}
+
+// Adjust UI to when Clicc is disabled
+func disableUI() {
+	enableButton.SetLabel("Enable")
+	ChangeDescLabel("Clicc is disabled")
+}
+
+// Adjust UI to when Clicc is enabled
+func enableUI() {
+	enableButton.SetLabel("Disable")
+	ChangeDescLabel("Clicc is enabled")
+}
+
+// ChangeEnabledStatus changes the status whether
+// Clicc is enabled
+func ChangeEnabledStatus(enabled bool) {
+	if enableButton == nil {
+		fmt.Println("Enable button has not been initialized, ChangeEnabledStatus discarded")
+		return
+	}
+
+	if enabled {
+		enableUI()
+	} else {
+		disableUI()
+	}
+}
+
+// ChangeDescLabel changes the text of descLabel
+func ChangeDescLabel(newDescLabel string) {
+	if descLabel == nil {
+		fmt.Println("Desc label has not been initialized, ChangeDescLabel discarded")
+		return
+	}
+
+	descLabel.SetLabel(newDescLabel)
 }
