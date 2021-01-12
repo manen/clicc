@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"github.com/manen/clicc/ui"
 )
 
 func main() {
-	fmt.Println("Hello World!")
+	ui.Init()
+	ui.Start()
 }
