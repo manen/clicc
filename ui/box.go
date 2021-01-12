@@ -14,7 +14,6 @@ func newBox() *gtk.Box {
 	if err != nil {
 		fmt.Println(err)
 	}
-
 	addClass(b, "main-box")
 
 	l, err := gtk.LabelNew(strconv.Itoa(i))
