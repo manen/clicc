@@ -20,7 +20,7 @@ func newHeaderBar() *gtk.HeaderBar {
 	hb.SetShowCloseButton(true)
 	hb.SetSubtitle(info.Desc)
 
-	hb.PackEnd(mb)
+	hb.PackStart(mb)
 
 	return hb
 }

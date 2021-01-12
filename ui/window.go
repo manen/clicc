@@ -14,7 +14,7 @@ func newWindow() *gtk.ApplicationWindow {
 		panic(err)
 	}
 
-	b := newBox()
+	b := newMainBox()
 
 	hb := newHeaderBar()
 
@@ -22,7 +22,7 @@ func newWindow() *gtk.ApplicationWindow {
 	win.Add(b)
 
 	win.SetTitle(info.Name)
-	win.SetDefaultSize(600, 350)
+	win.SetDefaultSize(600/2, 350/2)
 
 	win.Connect("destroy", func() {
 		win.Destroy()
